@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Notları</title>
+</head>
+<body>
+    <p id="show1"></p>
+    <p id="show2"></p>
+    <p id="show3"></p>
+    <script>
+        var students = [ 
+        {name:"Ahmet",notes:[50,100,70]}, 
+        {name:"Mehmet",notes:[0,50,40]},
+        {name:"Ayşe",notes:[50,55,38]}]
+        
+        var top1= students[0].notes;
+        var toplam1=0;
+        var text=""
+
+        for (var i=0; i<top1.length; i++){
+            toplam1+=top1[i];
+        }
+        var ort1= toplam1/top1.length;
+        if(ort1<50){
+            text="Kalmış"
+        }
+        else{
+            text="Geçmiş"
+        }
+        document.getElementById("show1").innerHTML=students[0].name+" "+"ortalamanız"+" "+Math.floor(ort1)+ "." + "Bu durumda "+ text+" "+"bulunuyorsunuz."+"<br>";
+
+        var top2=students[1].notes;
+        var toplam2=0;
+        for(i=0; i<top2.length; i++){
+            toplam2+=top2[i];
+        }
+        var ort2=toplam2 / top2.length;
+        if(ort2<50){
+            text="Kalmış"
+        }else{
+            text="Geçmiş"
+        }
+        document.getElementById("show2").innerHTML=students[1].name+" "+"ortalamanız"+" "+Math.floor(ort2)+"."+" "+"Bu durumda"+" "+text+" "+"bulunuyorsunuz."+"<br>";
+        
+        var top3=students[2].notes;
+        var toplam3=0;
+        for(i=0; i<top3.length; i++){
+            toplam3+=top3[i];
+        }
+        var ort3= toplam3/top3.length;
+        if(ort3<50){
+            text="Kalmış"
+        }else{
+            text="Geçmiş"
+        }
+        document.getElementById("show3").innerText=students[2].name+" "+"ortalamanız"+" "+Math.floor(ort3)+"."+" "+"Bu durumda"+" "+text+" "+"bulunuyorsunuz.";
+    </script>
+</body>
+</html>

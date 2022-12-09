@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faktöriyel</title>
+</head>
+<body>
+    <form action="#">
+        <label for="factorial">Hesapla:</label>
+        <input type="text" id="facT">
+        <input type="button" value="HESAPLA" onclick="factorial()">
+    </form>
+    <p id="fAct"></p>
+    <script>
+        var toplam=1;
+        var text="";
+        function factorial(){
+            var sayi=document.getElementById("facT").value;
+            if(sayi<0){
+                text="Sıfırdan büyük bir sayı girmeniz gerekmektedir."
+            }
+            else{
+                for(i=1; i<=sayi; i++){
+                    toplam=toplam*i;
+                }
+                window.alert(toplam)
+            }
+
+            document.getElementById("fAct").innerText=text;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="ligth-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arka Plan Rengi</title>
+    <style>
+        .ligth-mode .deneme-01{
+            width: 500px;
+            margin: auto;
+            display: grid;
+            gap: 24px;
+            background-color: #f0f0f0;
+        }
+        .ligth-mode .deneme-01-A{
+            display: flex;
+            justify-content:center;
+            color: brown;
+        }
+        
+        .ligth-mode .deneme-01-B{
+            margin: auto;
+        }
+        .dark-mode .deneme-01{
+            width: 500px;
+            margin: auto;
+            display: grid;
+            gap: 24px;
+            background-color: rgb(29, 28, 28);
+        }
+        .dark-mode .deneme-01-A{
+            display: flex;
+            justify-content:center;
+            color: #1a8cd8;
+        }
+        
+        .dark-mode .deneme-01-B{
+            margin: auto;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="deneme-01">
+      <h1 class="deneme-01-A">Mod Değiştirme Örneği</h1>
+      <a href="#" class="deneme-01-A" onclick="newTheme(event);">Mod Geçişi Yap</a>
+      <img class="deneme-01-B" src="../Content/images/home/card.jpg" alt="" />
+      <p class="deneme-01-A">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit aliquam
+        rerum nisi nihil aut adipisci, amet odit necessitatibus incidunt
+        repellat, tenetur nemo veniam commodi molestias voluptatibus tempora
+        mollitia unde id!
+      </p>
+    </div>
+
+    <script>
+        function newTheme(event){
+            event.preventDefault();
+            var mode= localStorage.getItem("theme");
+            if (mode === "dark"){
+                localStorage.setItem("theme","light");
+                document.querySelector("html").classList.remove("dark-mode");
+                document.querySelector("html").classList.add("light-mode");
+            }
+            else{
+                localStorage.setItem("theme","dark");
+                document.querySelector("html").classList.remove("ligt-mode");
+                document.querySelector("html").classList.add("dark-mode");
+            }
+        }
+
+        function controlTheme(){
+            var mode = localStorage.getItem("theme");
+            if(mode === "dark"){
+                document.querySelector("html").classList.remove("light-mode");
+                document.querySelector("html").classList.add("dark-mode");
+            }
+        }
+        controlTheme();
+    </script>
+  </body>
+</html>

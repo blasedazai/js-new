@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahmin Oyunu</title>
+</head>
+<body>
+    <h1>Butonla Sayı Tahmin Oyunu</h1>
+    <input type="button" id="buton1" value="Oyunu Başlat" onclick="baslaT()">
+    <input type="button" id="buton2" value="Tahmin Et" onclick="tahminE()"> <br>
+    <label for="inputArea">0-100 Arasında bir sayı giriniz:</label> <br>
+    <input type="text" id="inputArea">
+
+    <script>
+        var baslat=document.getElementById("buton1").value;
+        var tahmin=document.getElementById("buton2").value;
+        var sayi=document.getElementById("inputArea").value;
+        var sayi1,tahmin,hak=10;
+        function baslaT(){
+            tahmin.disabled=false;
+            sayi1=Math.round(Math.random()*100);
+            sayac=0;
+        }
+        function tahminE(){
+            if(sayi1=sayi.value && tahmin>hak){
+                window.alert("Tahmin hakkınız bitti.");
+            }
+            if(sayi1==sayi.value){
+                window.alert("Tebrikler Kazandınız.");
+            }
+            else if(sayi.value<sayi1){
+                window.alert("Daha büyük bir sayı giriniz.");
+            }
+            else{
+                window.alert("Daha küçük bir sayı giriniz.");
+            }
+        }
+    </script>
+</body>
+</html>

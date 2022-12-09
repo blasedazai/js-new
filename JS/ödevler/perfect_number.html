@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mükemmel Sayı</title>
+</head>
+<body>
+    <h1>JavaScript Mükemmel Sayı Örneği</h1>
+    <form action="#">
+        <label for="sayi">Sayı:</label>
+        <input type="text" id="sayi"><br><br>
+        <input type="button" value="HESAPLA" onclick="percetNumber()">
+        <p id="yazdir"></p>
+    </form>
+    <script>
+        var text=""
+        var toplam=0;
+        function percetNumber(){
+            var sayi=document.getElementById("sayi").value;
+            for(i=1; i<sayi; i++){
+                if(sayi%i==0){
+                    toplam=toplam+i;
+                }
+            }
+            if(sayi==toplam){
+                    text="Sayısı bir mükemmel sayıdır."
+                }
+                else{
+                    text="Sayısı bir mükemmel sayı değildir."
+                }
+                document.getElementById("yazdir").innerText=toplam+" "+text;
+        }
+    </script>
+</body>
+</html>
